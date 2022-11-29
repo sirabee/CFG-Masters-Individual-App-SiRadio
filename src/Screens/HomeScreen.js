@@ -1,15 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
-import { Button, ProgressViewIOSComponent, StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 import MyButton from '../Components/MyButton';
 
-export default function HomeScreen() {
+export default function HomeScreen({navigation}) {
+
   return (
     <View style={styles.container}>
       <View style={styles.top} />
       <View style={styles.middle}>
       <Text style={styles.textStyle}>This is SiRadio!</Text>
       <MyButton details="Cool button"></MyButton>
-      <Button title="learn more" color="red"></Button>
+      <Button title='Home Screen' color="red">
+
+      </Button>
+      <Text> HomeScreen page</Text>
+      <Button
+      title="Go to About us"
+      onPress={() =>
+        navigation.navigate('About Us', {name: 'Sirad'})
+      }
+    />
       </View>
       <View style={styles.bottom} />
       
