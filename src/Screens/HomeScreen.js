@@ -1,75 +1,168 @@
-import { StatusBar } from 'expo-status-bar';
-import { Button, StyleSheet, Text, View } from 'react-native';
+// import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { StyleSheet } from 'react-native';
 import MyButton from '../Components/MyButton';
+import { Text, Button } from 'native-base';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
 
 export default function HomeScreen({navigation}) {
-
+  
   return (
-    <View style={styles.container}>
-      <View style={styles.top} />
-      <View style={styles.middle}>
-      <Text style={styles.textStyle}>This is SiRadio!</Text>
-      <MyButton details="Cool button"></MyButton>
-      <Button title='Home Screen' color="red">
+      <SafeAreaView>
+        <Text style={styles.text} color="green.300">Welcome to SiRadio</Text>
+        <MyButton details="Cool button"></MyButton>
+     <Button title='Home Screen' color="red">
 
-      </Button>
-      <Text> HomeScreen page</Text>
-      <Button
-      title="Go to About us"
-      onPress={() =>
-        navigation.navigate('About Us', {name: 'Sirad'})
-      }
+     </Button>
+     <Button
+     title="Go to About us"
+     onPress={() =>
+      navigation.navigate('About Us', {name: 'Sirad'})
+    }
     />
-      </View>
-      <View style={styles.bottom} />
+      </SafeAreaView>
+    );
+  }
+
+  const styles = StyleSheet.create({
+    text: {
+        fontSize: 20,
+        fontStyle: 'italic',
+    },
+});
+
+
+  // const styles=StyleSheet.create({
+  //   text: {
+  //     fontFamily: 'Helvetica',
+  //     fontSize: 30,
+  //   },
+  // }),
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#fff',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+// });
+
+
+  // return (
+  //   <View style={styles.container}>
+  //     <View style={styles.top} />
+  //     <View style={styles.middle}>
+  //     <Text style={styles.textStyle}>This is SiRadio!</Text>
+  //     <MyButton details="Cool button"></MyButton>
+  //     <Button title='Home Screen' color="red">
+
+  //     </Button>
+  //     <Text> HomeScreen page</Text>
+  //     <Button
+  //     title="Go to About us"
+  //     onPress={() =>
+  //       navigation.navigate('About Us', {name: 'Sirad'})
+  //     }
+  //   />
+  //     </View>
+  //     <View style={styles.bottom} />
       
     
-      <StatusBar style="auto" />
-      </View>
+  //     <StatusBar style="auto" />
+  //     </View>
 
-  );
-}
+  // );
+// }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    // alignItems: 'center',
-    // justifyContent: 'center',
-    // padding: 20,
-    // marging: 10,
-    // flexDirection: "column",
-  },
+// class HomeScreen extends React.Component {
 
-  top: {
-    flex: 1,
-    backgroundColor: 'grey',
-    // borderWidth: 1,
-    // borderTopLeftRadius: 5,
-    // borderTopRightRadius: 5,
-  },
+//   constructor(){
+//     super()
+//     this.state = {value:0}
+//     }
 
-  middle: {
-    flex: 1,
-    backgroundColor: 'beige',
-    // borderWidth: 2,
-     alignItems: 'center',
-    justifyContent: 'center',
-  },
+//     update = () => {
+//         this.setState({value: this.state.value + 1})
+//       }
 
-  bottom: {
-    flex: 1,
-    backgroundColor: 'pink',
-    // borderWidth: 1,
-    // borderBottomLeftRadius: 5,
-    // borderBottomRightRadius: 5,
-  },
+//     componentDidUpdate(){
+//         console.log(`the new value is: ${this.state.value}`)
+//       }
 
-  textStyle: {
-    color: '#196F3D',
-    fontSize: 30,
-    fontWeight: 'normal',
-    letterSpacing: 0.25,
-    textDecorationLine: 'none',
-  },
-});
+//     componentDidMount(){
+//     console.log('About us screen has successfully mounted')
+//     }
+
+//     render(){
+//       return(
+//         <View>
+//           <Text color={"green300"}>Demo</Text>
+//         // <View style={styles.container}>
+//         // <View style={styles.top} />
+//         // <View style={styles.middle}>
+//         // <Text style={styles.textStyle}>This is SiRadio!</Text>
+//         <MyButton details="Cool button"></MyButton>
+//         <Button title='Home Screen' color="red" onPress={this.update}></Button>
+//         <Button
+//         title="Go to About us"
+//         onPress={() =>
+//           this.props.navigation.navigate('About Us', {name: 'Sirad'})
+//         }
+//       />
+//         </View>
+//         <View style={styles.bottom} />
+        
+      
+//         <StatusBar style="auto" />
+//         </View>
+//       );
+//     }
+//   }
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#fff',
+//     // alignItems: 'center',
+//     // justifyContent: 'center',
+//     // padding: 20,
+//     // marging: 10,
+//     // flexDirection: "column",
+//   },
+
+//   top: {
+//     flex: 1,
+//     backgroundColor: 'grey',
+//     // borderWidth: 1,
+//     // borderTopLeftRadius: 5,
+//     // borderTopRightRadius: 5,
+//   },
+
+//   middle: {
+//     flex: 1,
+//     backgroundColor: 'beige',
+//     // borderWidth: 2,
+//      alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+
+//   bottom: {
+//     flex: 1,
+//     backgroundColor: 'pink',
+//     // borderWidth: 1,
+//     // borderBottomLeftRadius: 5,
+//     // borderBottomRightRadius: 5,
+//   },
+
+//   textStyle: {
+//     color: '#196F3D',
+//     fontSize: 30,
+//     fontWeight: 'normal',
+//     letterSpacing: 0.25,
+//     textDecorationLine: 'none',
+//   },
+// });
+
+// export default HomeScreen;
