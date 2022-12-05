@@ -2,25 +2,25 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import MyButton from '../Components/MyButton';
-import { Text, Button } from 'native-base';
+import { Text, Button, Box, VStack, Heading } from 'native-base';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useNavigation } from '@react-navigation/native';
 
 
 export default function HomeScreen({navigation}) {
   
+
   return (
       <SafeAreaView>
-        <Text style={styles.text} color="green.300">Welcome to SiRadio</Text>
+        <Box>
+        <VStack w="100%" space={4} px="2" mt="4" alignItems="center" justifyContent="center">
+        <Heading color="green.600">Welcome to SiRadio</Heading>
         <MyButton details="Cool button"></MyButton>
-     <Button title='Home Screen' color="red">
-
-     </Button>
-     <Button
-     title="Go to About us"
-     onPress={() =>
-      navigation.navigate('About Us', {name: 'Sirad'})
-    }
-    />
+        <Button size="md" variant="solid" colorScheme="primary">Cool Button</Button>
+     <Button color="red">Home Screen</Button>
+     <Button variant="link" onPress={() => navigation.navigate('About Us')}>Go to About Us</Button>
+     </VStack>
+     </Box>
       </SafeAreaView>
     );
   }

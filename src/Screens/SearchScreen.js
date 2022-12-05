@@ -1,7 +1,7 @@
 import React from "react";
 import { NativeBaseProvider, extendTheme, Text, Box } from "native-base";
 
-export default function NewScreen() {
+export default function SearchScreen() {
   
     const newColorTheme = {
         brand: {
